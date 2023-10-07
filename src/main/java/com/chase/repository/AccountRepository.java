@@ -13,7 +13,7 @@ public class AccountRepository {
 
     public static List<Account> accountList = new ArrayList<>();
 
-    public Account save(Account account){
+    public Account save(Account account) {
         accountList.add(account);
         return account;
     }
@@ -27,7 +27,7 @@ public class AccountRepository {
         //complete the method, that find the account inside the list, if not
         //throw RecordNotFoundException
         return accountList.stream().filter(account -> account.getId().equals(id))
-                .findAny().orElseThrow(()-> new RecordNotFoundException("Account does not exist in the database."));
+                .findAny().orElseThrow(() -> new RecordNotFoundException("Account does not exist in the database."));
 
     }
 }
